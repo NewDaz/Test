@@ -1,0 +1,15 @@
+
+<?php
+
+$categories = Mage::getModel('catalog/category')
+    ->getCollection()
+    ->addFieldToFilter('name', array('like'=> "%a%"));
+
+
+foreach ($categories as $category):
+
+echo '<li class="level1">' . $category->getName() . '</a>';
+
+endforeach;
+?>
+

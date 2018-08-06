@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Dima_AdminGrid>
+      <version>1.0.0</version>
+    </Dima_AdminGrid>
+  </modules>
+  <global>
+    <helpers>
+      <admingrid>
+        <class>Dima_AdminGrid_Helper</class>
+      </admingrid>
+    </helpers>
+    <blocks>
+      <admingrid>
+        <class>Dima_AdminGrid_Block</class>
+      </admingrid>
+    </blocks>
+
+     <resources>
+         <admingrid_setup>
+             <setup>
+             <module>Dima_AdminGrid</module>
+             </setup>
+         </admingrid_setup>
+     </resources>
+  </global>
+
+  <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <dima_admingrid before="Mage_Adminhtml">Dima_AdminGrid_Adminhtml</dima_admingrid>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+  </admin>
+  <adminhtml>
+    <layout>
+      <updates>
+        <admingrid>
+          <file>admingrid.xml</file>
+        </admingrid>
+      </updates>
+    </layout>
+  </adminhtml>
+</config>
